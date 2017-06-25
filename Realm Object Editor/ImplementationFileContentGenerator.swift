@@ -45,15 +45,15 @@ class ImplementationFileContentGenerator: FileContentGenerator {
             }
             
             var defValueDefination = lang.implementation.forEachPropertyWithDefaultValue
-            defValueDefination.replace(AttrName, by: attr.name)
-            defValueDefination.replace(AttrDefaultValue, by: defValue)
-            defValues += defValueDefination
+            defValueDefination!.replace(AttrName, by: attr.name)
+            defValueDefination!.replace(AttrDefaultValue, by: defValue)
+            defValues += defValueDefination!
         }
         
         if defValues.characters.count > 0{
             var defValuesDef = lang.implementation.defaultValuesDefination
-            defValuesDef.replace(DefaultValues, by: defValues)
-            content += defValuesDef
+            defValuesDef!.replace(DefaultValues, by: defValues)
+            content += defValuesDef!
         }
     }
     
